@@ -1,0 +1,101 @@
+body {
+  background: url("../img/bg.jpg");
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-size: cover;
+}
+
+#start {
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  top: 70%;
+  left: calc(50% - 70px);
+  font-weight: 800;
+  font-size: 2rem;
+  z-index: 1;
+  opacity: 0.7;
+  transition: opacity 1s;
+}
+
+#start span {
+  letter-spacing: 8px;
+}
+
+#start:hover {
+  opacity: 1;
+}
+
+#start:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s linear;
+}
+
+#start:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+#start:hover ~ .moonDiv:nth-of-type(4) {
+  opacity: 1;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.moonDiv {
+  height: 100vh;
+  width: calc(100vw / 8);
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  text-align: center;
+}
+
+.moonDiv:hover {
+  opacity: 1;
+}
+
+img {
+  max-width: 150px;
+  width: 90%;
+}
+
+#moon1 {
+  margin-top: 72vh;
+}
+
+#moon2 {
+  margin-top: 50vh;
+}
+
+#moon3 {
+  margin-top: 35vh;
+}
+
+#moon4 {
+  margin-top: 25vh;
+}
+
+#moon5 {
+  margin-top: 19vh;
+}
+
+#moon6 {
+  margin-top: 14vh;
+}
+
+#moon7 {
+  margin-top: 11vh;
+}
+
+/*# sourceMappingURL=styles.css.map */
