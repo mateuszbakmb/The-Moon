@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', ()=>{
 
 const start = document.querySelector('#start')
-start.addEventListener('click', ()=>{console.log('in progress')})
+start.addEventListener('click', ()=>{
+  document.querySelector('.moonOrbit').classList.toggle('hidden')
+  console.log("still in progress")
+})
 
 
 })
