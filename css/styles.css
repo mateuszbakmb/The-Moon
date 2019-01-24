@@ -6,6 +6,36 @@ body {
   overflow: hidden;
 }
 
+.loadingScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  letter-spacing: 6px;
+  transition: all 1s;
+}
+.loadingScreen h1:after {
+  position: absolute;
+  content: ".";
+  animation: dots 1.5s linear infinite;
+}
+.loadingScreen img {
+  animation: orbit 2s linear infinite;
+}
+
+.opacity {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
 .start {
   color: #fff;
   text-decoration: none;
@@ -14,7 +44,7 @@ body {
   left: calc(50% - 70px);
   font-weight: 800;
   font-size: 2rem;
-  z-index: 100;
+  z-index: 99;
   opacity: 0.7;
   transition: opacity 1s;
 }
@@ -50,13 +80,14 @@ body {
 }
 
 #landingPage {
+  position: relative;
   display: flex;
   justify-content: space-around;
 }
 
 .moonDiv {
   height: 100vh;
-  width: calc(100vw / 8);
+  width: calc(100vw / 7);
   opacity: 0;
   transition: opacity 2s ease-in-out;
   text-align: center;
@@ -207,7 +238,41 @@ body {
   opacity: 0;
   animation: flyDown 2s 2s forwards;
 }
+.moonLanding #americanFlag {
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  height: calc(120px + 20vw);
+  opacity: 0;
+  animation: flyDown 2s forwards;
+}
+.moonLanding #goBack {
+  top: 10%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeIn 2s 2s forwards;
+}
 
+@keyframes dots {
+  0% {
+    content: "";
+  }
+  30% {
+    content: ".";
+  }
+  60% {
+    content: "..";
+  }
+  90% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
 @keyframes orbit {
   100% {
     transform: rotate(360deg);
@@ -253,8 +318,16 @@ body {
     left: 200%;
   }
 }
+@media screen and (max-width: 1250px) {
+  .moonLanding #goBack {
+    top: 20%;
+  }
+}
 @media screen and (max-height: 450px) {
   .moonLanding #theFlag {
+    top: 10%;
+  }
+  .moonLanding #goBack {
     top: 10%;
   }
 }
