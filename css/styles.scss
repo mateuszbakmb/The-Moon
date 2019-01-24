@@ -6,7 +6,7 @@ body {
   overflow: hidden;
 }
 
-#start {
+.start {
   color: #fff;
   text-decoration: none;
   position: absolute;
@@ -14,20 +14,20 @@ body {
   left: calc(50% - 70px);
   font-weight: 800;
   font-size: 2rem;
-  z-index: 1;
+  z-index: 100;
   opacity: 0.7;
   transition: opacity 1s;
 }
 
-#start span {
+.start span {
     letter-spacing: 8px;
 }
 
-#start:hover {
+.start:hover {
   opacity: 1;
 }
 
-#start:before {
+.start:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -40,12 +40,12 @@ body {
   transition: all .3s linear;
 }
 
-#start:hover:before {
+.start:hover:before {
   visibility: visible;
   transform: scaleX(1);
 }
 
-#start:hover ~ .moonDiv:nth-of-type(4) {
+.start:hover ~ .moonDiv:nth-of-type(4) {
   opacity: 1;
 }
 
@@ -99,11 +99,28 @@ body {
   left:0;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   background-color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: fadeIn 2s;
+  }
+
+  #moonStart{
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  }
 
   #absolute {
     position: absolute;
@@ -114,23 +131,81 @@ body {
     height: 95vmin;
     width: 95vmin;
     animation: orbit 10s linear infinite;
-
-    img{
-      transform: rotate(45deg);
-      height: calc(20px + 5vmin);
-      position: relative;
-      left: 50%;
-    }
+    z-index: 3;
   }
 
-  img{
+  #moonPic{
     margin: auto 0;
     height: 80vmin;
+    z-index: 1;
   }
-}
+
+  .rocket{
+    transform: rotate(45deg);
+    height: calc(20px + 5vmin);
+    position: relative;
+    left: 50%;
+  }
 
 .hidden {
   display:none;
+}
+
+.moonLanding {
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  #moonFlying {
+    position:absolute;
+    top: 50%;
+    left: -100%;
+    transform: translate(0, -50%) rotate(45deg);
+    height: calc(100px + 30vw);
+    animation: rocketFly 4s forwards;
+    z-index: 1;
+  }
+
+  #theFlag {
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    animation: fadeIn 2s 4s forwards;
+  }
+
+  #moonGround{
+    margin-top: 50vh;
+    width: 100%;
+    min-height: 50vh;
+    opacity: 0;
+    animation: fadeIn 2s 1s forwards;
+  }
+
+  #astro{
+    position:absolute;
+    top: 30%;
+    left: 20%;
+    transform: translate(0, -50%);
+    height: calc(100px + 30vw);
+    opacity: 0;
+    animation: flyDown 2s 3s forwards;
+  }
+
+  #module{
+    position:absolute;
+    top: 30%;
+    right: 10%;
+    transform: translate(0, -80%);
+    height: calc(40px + 15vw);
+    opacity: 0;
+    animation: flyDown 2s 2s forwards;
+  }
+
 }
 
 @keyframes orbit {
@@ -142,4 +217,47 @@ body {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@keyframes twinkle {
+  0% {
+    transform: scale(1, 1);
+    background: rgba(255,255,255,0.0);
+  }
+  60% {
+    transform: scale(0.8, 0.8);
+    background: rgba(255,255,255,1);
+  }
+  80% {
+    background: rgba(255,255,255,0.00);
+    transform: scale(1, 1);
+  }
+  100% {
+    background: rgba(255,255,255,0.0);
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes flyDown {
+  50%{
+    opacity: 1;
+  }
+  100%{
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes rocketFly {
+  100%{
+    left: 200%;
+  }
+}
+
+@media screen and (max-height: 450px){
+  .moonLanding{
+  #theFlag {
+    top: 10%;
+  }
+}
 }
