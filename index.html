@@ -12,7 +12,7 @@
 
 <body>
   <section id="landingPage">
-    <a id="start" href="#"><span>STAR</span>T</a>
+    <a class="start" id="startButton" href="#"><span>STAR</span>T</a>
     <div class="moonDiv"><img id="moon1" src="img/moon1.png" alt=""></div>
     <div class="moonDiv"><img id="moon2" src="img/moon2.png" alt=""></div>
     <div class="moonDiv"><img id="moon3" src="img/moon3.png" alt=""></div>
@@ -22,10 +22,19 @@
     <div class="moonDiv"><img id="moon7" src="img/moon7.png" alt=""></div>
   </section>
   <section class="moonOrbit hidden">
+    <div class="stars"></div>
+    <img id="moonPic" src="img/moonOrbit.jpg" alt="Moon">
+    <a id="moonStart" class="start" href="#"><span>THE MOO</span>N</a>
     <div id="absolute">
-      <img src="img/rocket.png" alt="rocket">
+      <img class="rocket" src="img/rocket.png" alt="rocket">
     </div>
-    <img src="img/moonOrbit.jpg" alt="Moon">
+  </section>
+  <section class="moonLanding hidden">
+    <img id="moonFlying" class="rocket" src="img/rocket.png" alt="rocket">
+    <a id="theFlag" class="start" href="#"><span>THE FLA</span>G</a>
+    <img id="moonGround" src="img/ground.jpg" alt="Moon floor">
+    <img id="module" src="img/ApolloModule.png" alt="Apollo 11 module">
+    <img id="astro" src="img/astro.png" alt="Astronaut">
   </section>
   <script src="script/script.js"></script>
 </body>
