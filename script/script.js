@@ -42,6 +42,22 @@ goBack.addEventListener('click', ()=>{
   theFlag.classList.toggle('hidden')
   document.querySelector('#americanFlag').classList.toggle('hidden')
   goBack.classList.toggle('hidden')
-  start.classList.toggle('hidden')
+  document.querySelector('.groupPhoto').classList.toggle('hidden')
 })
+
+const flyHome = document.querySelector('.flyHome')
+const finalSlide = document.querySelector('#finalSlide')
+finalSlide.addEventListener('click', ()=>{
+  document.querySelector('.groupPhoto').classList.toggle('hidden')
+  flyHome.classList.toggle('hidden')
+  setTimeout( ()=>{
+    document.querySelector('#earthFlying').classList.toggle('hidden')
+    setTimeout( ()=>{
+      document.querySelector('#earthFlying').classList.toggle('hidden')
+      flyHome.classList.toggle('hidden')
+      start.classList.toggle('hidden')
+    },1500)
+  },5000)
+})
+
 })
